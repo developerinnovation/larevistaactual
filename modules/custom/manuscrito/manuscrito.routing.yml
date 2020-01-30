@@ -1,0 +1,56 @@
+error_module_page:
+    path: 'error/no-found'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::error_found'
+        _title: 'Contenido no encontrado'
+    requirements:
+        _permission: 'New Manuscrito'
+type_module_page:
+    path: 'new/type/manuscrito'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::type'
+        _title: 'Tipos de Manuscrito'
+    requirements:
+        _permission: 'New Manuscrito'
+send_module_page:
+    path: 'new/{type}/send'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::send'
+        _title: 'Enviar'
+    requirements:
+        _permission: 'New Manuscrito'
+guia_module_page:
+    path: 'guia/{id}'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::guia'
+        _title: 'Guía'
+    requirements:
+        _permission: 'New Manuscrito'
+custom_module_page:
+    path: 'new/send/manuscrito'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::content'
+        _title: 'Nuevo Manuscrito'
+    requirements:
+        _permission: 'New Manuscrito'
+edit_module_page:
+    path: 'update/{nid}/manuscrito'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::edit'
+        _title: 'Edición Manuscrito'
+    requirements:
+        _permission: 'Manuscrito Edit'
+show_module_page:
+    path: 'show/saved/content'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::show'
+        _title: 'Contenido guardado'
+    requirements:
+        _permission: 'Content Saved'
+thanks_module_page:
+    path: 'article/saved/{type}/{nid}'
+    defaults:
+        _controller: '\Drupal\manuscrito\Controller\ManuscritoController::thanks'
+        _title: 'Artículo recibido'
+    requirements:
+        _permission: 'New Manuscrito'

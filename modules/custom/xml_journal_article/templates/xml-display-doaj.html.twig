@@ -1,0 +1,49 @@
+<records xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://doaj.org/static/doaj/doajArticles.xsd">
+    <record>
+        <language>eng</language>
+        <publisher>Global Rehumatology</publisher>
+        <journalTitle>Ciencia e Innovación en Salud</journalTitle>
+        <eissn>2344-8636</eissn>
+        <publicationDate>{{ node_es.field_fecha.value|date('U')|format_date('fecha_html') }}</publicationDate>
+        <doi>10.17081/innosa.64</doi>
+        <publisherRecordId>{{ node_es.id }}</publisherRecordId>
+        <title language="eng">{{ node_en.title.value|striptags|raw }}</title>
+        <title language="spa">{{ node_es.title.value|striptags|raw }}</title>
+        <authors>
+            {% for autor in node_es.field_autores %}
+                <author>
+                    <name>{{ autor.entity.field_nombre.value }} {{ autor.entity.field_apellidos.value }}</name>
+                    <affiliationId>{{ autor.entity.uid.value }}</affiliationId>
+                </author>
+            {% endfor %}
+        </authors>
+        <affiliationsList>
+            <affiliationName affiliationId="0">Global Rheumatology Mia, Florida, UEA</affiliationName>
+        </affiliationsList>
+        <abstract language="eng">
+            {{ node_en.field_resumen.value|striptags|raw|replace('&nbsp;', '') }}
+        </abstract>
+        <abstract language="spa">
+            {{ node_es.field_resumen.value|striptags|raw|replace('&nbsp;', '') }}
+        </abstract>
+        <fullTextUrl format="html">{{ drupal_url("node/#{node_es.id}",{absolute: true}) }}</fullTextUrl>
+        <keywords language="eng">
+            {% if node_en.field_tags[0] %}             
+                {% for key, item in node_en.field_tags if key|first != '#' %}
+                    <keyword>
+                        <name>{{ item.entity.name.value }}</name>
+                    </keyword>                    
+                {% endfor %}
+            {% endif %}
+        </keywords>
+        <keywords language="spa">          
+            {% if node_es.field_tags[0] %}             
+                {% for key, item in node_es.field_tags if key|first != '#' %}
+                    <keyword>
+                        <name>{{ item.entity.name.value }}</name>
+                    </keyword>                    
+                {% endfor %}
+            {% endif %}
+        </keywords>
+    </record>
+</records>

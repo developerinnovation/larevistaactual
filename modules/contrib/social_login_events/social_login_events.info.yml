@@ -1,0 +1,7 @@
+name: 'OneAll Social Login Events'
+type: module
+description: 'EventSubscriber example module for OneAll Social Login.'
+package: 'OneAll Social Login Events'
+core: 8.x
+dependencies:
+  - social_login

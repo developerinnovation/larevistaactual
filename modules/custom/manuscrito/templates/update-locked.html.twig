@@ -1,0 +1,18 @@
+<main id="info-article">
+    <h2>Artículo en revisión</h2>
+    <div class="list-type">
+
+        <div class="box-type">           
+            <div class="article active">
+                <ul>
+                    <li class="target" style="width: calc(73.3% - 30px);">
+                        <p>El artículo "<b>{{ drupal_field('title', 'node', id) }}</b>" aún se encuentra en proceso de revisión, recuerda que solo podrás modificarlo cuando el artículo tenga asignado el estado <b>"En Edición"</b>. <b>{{ drupal_field('field_estado_del_articulo', 'node', id) }}</b> </p>
+                        <h3>
+                            <a href="{{ path('entity.node.canonical', {'node': id}) }}">Ver artículo</a>
+                        </h3>
+                    </li>                  
+                </ul>
+            </div>
+        </div>    
+    </div>
+</main>

@@ -1,0 +1,5 @@
+name: Send Mail
+type: module
+description: Send an email programmatically.
+core: 8.x
+package: Custom

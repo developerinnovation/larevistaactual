@@ -1,0 +1,240 @@
+<?php
+
+function send_revisor($to,$title,$body,$url_node,$nid){
+
+
+    // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+    $titulo = 'Nuevo manuscrito recibido';
+    $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+    $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+    // Cabeceras adicionales
+    $cabeceras .= 'From: Global Rheumatology <no-reply@davidmartinezb.com>' . "\r\n";
+    // Enviarlo
+
+    $mensaje='<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"><meta name="referrer" content="no-referrer">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <style>
+            .box-logo{
+                padding: 25px 10px 10px;
+            }
+            h1{
+                font-size: 16px;
+                padding: 30px 10px;
+            }
+            .codigo-label{
+                font-size: 18px;
+            }
+            .texto-ayuda{
+                font-size: 14px;
+            }
+            .enlace{
+                font-size: 12px;
+            }
+            @media screen and (min-width: 600px) {
+                .box-logo{
+                    padding: 45px 10px 10px;
+                }
+                h1 {
+                    font-size: 30px;
+                    padding: 45px 10px 40px;
+                }
+                .codigo-label{
+                    font-size: 26px;
+                }
+                .texto-ayuda{
+                    font-size: 18px;
+                }
+                .enlace{
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body style="background-color: #ddd; color: #fff; padding: 0px; -webkit-text-size-adjust:none; font-size: 16px; font-family:arial,helvetica,sans-serif;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px; background: url(http://'.$_SERVER['SERVER_NAME'].'/themes/custom/basic/images/fondo-mail.jpg)">
+                            <tbody>
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="box-logo">
+                                                        <img src="http://'.$_SERVER['SERVER_NAME'].'/themes/custom/basic/images/logo.png" alt="Global Rheumatology" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div style="text-align: center;">
+                                                            <h1 style="font-family: Helvetica, sans-serif; font-weight: 700; text-align: center; color: #fff; text-transform: uppercase; margin: 0;">¡GLOBAL RHEUMATOLOGY<br><span style="font-size: 2em; font-style: italic;">Nuevo Manuscrito recibido!</span></h1>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 0 20px;">
+                                                        <div style="text-align: center;">
+                                                            <span style="font-family: Helvetica, sans-serif; font-weight: 700; font-size: 40px; text-align: center; line-height: 1.2em; color: #fff;">'.strtoupper($title).'</span>
+                                                            <p class="texto-ayuda" style="font-family: Helvetica, sans-serif; font-weight: 300; text-align: center; line-height: 1.4em; color: #fff; margin: 0 0 30px;">'.$body.'</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 0 20px;">
+                                                        <div style="text-align: center;">
+                                                            <a href="'.$url_node.'" class="enlace" style="font-family: Helvetica, sans-serif; font-weight: 300; text-align: center; line-height: 1.2em; color: #fff; text-decoration: none; display: block; margin: 0 0 10px;"><b>Ver Manuscrito</b></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>';
+
+    mail($to, $titulo, $mensaje, $cabeceras);	
+}
+
+
+function send_autor($to,$title,$body,$url_node,$nid){
+
+
+    // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+    $titulo = 'Nuevo manuscrito recibido';
+    $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+    $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+    // Cabeceras adicionales
+    $cabeceras .= 'From: Global Rheumatology <no-reply@davidmartinezb.com>' . "\r\n";
+    // Enviarlo
+
+    $mensaje='<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"><meta name="referrer" content="no-referrer">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <style>
+            .box-logo{
+                padding: 25px 10px 10px;
+            }
+            h1{
+                font-size: 16px;
+                padding: 30px 10px;
+            }
+            .codigo-label{
+                font-size: 18px;
+            }
+            .texto-ayuda{
+                font-size: 14px;
+            }
+            .enlace{
+                font-size: 12px;
+            }
+            @media screen and (min-width: 600px) {
+                .box-logo{
+                    padding: 45px 10px 10px;
+                }
+                h1 {
+                    font-size: 30px;
+                    padding: 45px 10px 40px;
+                }
+                .codigo-label{
+                    font-size: 26px;
+                }
+                .texto-ayuda{
+                    font-size: 18px;
+                }
+                .enlace{
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body style="background-color: #ddd; color: #fff; padding: 0px; -webkit-text-size-adjust:none; font-size: 16px; font-family:arial,helvetica,sans-serif;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px; background: url(http://'.$_SERVER['SERVER_NAME'].'/themes/custom/basic/images/fondo-mail.jpg)">
+                            <tbody>
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="box-logo">
+                                                        <img src="http://'.$_SERVER['SERVER_NAME'].'/themes/custom/basic/images/logo.png" alt="Global Rheumatology" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div style="text-align: center;">
+                                                            <h1 style="font-family: Helvetica, sans-serif; font-weight: 700; text-align: center; color: #fff; text-transform: uppercase; margin: 0;">¡GLOBAL RHEUMATOLOGY<br><span style="font-size: 2em; font-style: italic;">Nuevo Manuscrito recibido!</span></h1>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 0 20px;">
+                                                        <div style="text-align: center;">
+                                                            <span style="font-family: Helvetica, sans-serif; font-weight: 700; font-size: 40px; text-align: center; line-height: 1.2em; color: #fff;">'.strtoupper($title).'</span>
+                                                            <p class="texto-ayuda" style="font-family: Helvetica, sans-serif; font-weight: 300; text-align: center; line-height: 1.4em; color: #fff; margin: 0 0 30px;">'.$body.'</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 0 20px;">
+                                                        <div style="text-align: center;">
+                                                            <a href="'.$url_node.'" class="enlace" style="font-family: Helvetica, sans-serif; font-weight: 300; text-align: center; line-height: 1.2em; color: #fff; text-decoration: none; display: block; margin: 0 0 10px;"><b>Ver Manuscrito</b></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>';
+
+    mail($to, $titulo, $mensaje, $cabeceras);	
+}

@@ -1,0 +1,6 @@
+saved_node:
+  path: '/node/saved/{nid}/show/later'
+  defaults:
+    _controller: '\Drupal\save_node\Controller\SaveNodeController::Render'
+  requirements:
+    _access: 'TRUE'

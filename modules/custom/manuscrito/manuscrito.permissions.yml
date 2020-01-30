@@ -1,0 +1,15 @@
+'New Manuscrito':
+  title: 'Send New Manuscrito'
+  description: 'Gives first level permission to the users.'
+  restrict access: true
+
+'Manuscrito Edit':
+  title: 'Edit Manuscrito Route Module'
+  description: 'Gives second level permission to the users.'
+  restrict access: true
+
+'Content Saved':
+  title: 'Show content saved'
+  description: 'Gives second level permission to the users.'
+  restrict access: true
+

@@ -1,0 +1,12 @@
+name: PowerTagging Corpus Management
+type: module
+description: Manage your PoolParty corpora inside Drupal
+package: Semantic Drupal
+# core: 8.x
+dependencies:
+ - powertagging:powertagging
+# Information added by Drupal.org packaging script on 2019-07-17
+version: '8.x-1.0-rc4'
+core: '8.x'
+project: 'powertagging'
+datestamp: 1563354524

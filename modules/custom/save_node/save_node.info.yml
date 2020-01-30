@@ -1,0 +1,5 @@
+name: 'Saved Node'
+description: 'Permite guardar nodos vía ajax'
+core: 8.x
+type: module
+package: Custom

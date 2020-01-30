@@ -1,0 +1,11 @@
+name: Footnotes
+description: 'Add automatically numbered footnotes to your posts.'
+# core: 8.x
+# project: footnotes
+type: module
+
+# Information added by Drupal.org packaging script on 2018-02-21
+version: '8.x-2.1'
+core: '8.x'
+project: 'footnotes'
+datestamp: 1519212506

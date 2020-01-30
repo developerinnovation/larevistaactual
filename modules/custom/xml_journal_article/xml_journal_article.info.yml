@@ -1,0 +1,6 @@
+name: 'XML Journal Article'
+description: 'Journal Article Tag Suite XML generator'
+core: 8.x
+type: module
+package: Custom
+

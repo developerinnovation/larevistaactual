@@ -1,0 +1,44 @@
+<ArticleSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Article>
+        <Journal>
+            <PublisherName>Global Rheumatology</PublisherName>
+            <JournalTitle>Revista Ciencia e Innovación en Salud</JournalTitle>
+            <PubDate PubStatus="ppublish">
+                <Year>{{ node_en.field_fecha.value|date('Y') }}</Year>
+                <Month>{{ node_en.field_fecha.value|date('m') }}</Month>
+                <Day>{{ node_en.field_fecha.value|date('d') }}</Day>
+            </PubDate>
+        </Journal>
+        <ArticleTitle>{{ node_en.title.value|striptags|raw }}</ArticleTitle>
+        <FirstPage>1</FirstPage>
+        <ELocationID EIdType="doi">10.17081/innosa 64</ELocationID>
+        <Language>EN</Language>
+        <AuthorList>
+            {% for autor in node_en.field_autores %}
+                <author>
+                    <FirstName>{{ autor.entity.field_nombre.value }} {{ autor.entity.field_apellidos.value }}</FirstName>
+                    <Email>{{ autor.entity.mail.value }}</Email>
+                    <AffiliationInfo>
+                        <Affiliation>Global Rheumatology Mia, Florida, UEA</Affiliation>
+                    </AffiliationInfo>
+                </author>
+            {% endfor %}
+        </AuthorList>
+        <Abstract>
+            <AbstractText label="SUMMARY">{{ node_en.field_resumen.value|striptags|raw|replace('&nbsp;', '') }}</AbstractText>
+            <AbstractText label="METHODS">{{ node_en.field_metodos.value|striptags|raw|replace('&nbsp;', '') }}</AbstractText>
+  <AbstractText label="RESULTS">{{ node_en.field_resultado.value|striptags|raw|replace('&nbsp;', '') }}</AbstractText>
+            <AbstractText label="CONCLUSIONS">{{ node_en.field_conclusion.value|striptags|raw|replace('&nbsp;', '') }}</AbstractText>
+        </Abstract>
+        <CopyrightInformation>Global Rheumatology</CopyrightInformation>
+        <ObjectList>
+             {% if node_en.field_tags[0] %}             
+                {% for key, item in node_en.field_tags if key|first != '#' %}
+                    <Object Type="keyword">
+                        <Param Name="value">{{ item.entity.name.value }}</Param>
+                    </Object>                  
+                {% endfor %}
+            {% endif %}
+        </ObjectList>
+    </Article>
+</ArticleSet>

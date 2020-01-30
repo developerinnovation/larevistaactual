@@ -1,0 +1,27 @@
+<?php
+function manuscrito_theme($existing, $type, $theme, $path) {
+    return array(
+        'listing_display' => array( // list node saved
+            'variables' => array('id_node' => NULL),
+            'template' => 'listing-list',
+        ),
+        'type_display' => array( // list type node
+            'template' => 'type-list',
+        ),
+        'form_list' => array( // create node
+            'variables' => array('markup' => NULL,'type' => NULL),
+            'template' => 'form-list',
+        ),
+        'thanks_list' => array( // article saved message
+            'variables' => array('type' => NULL,'id' => NULL),
+            'template' => 'thank-list',
+        ),
+        'error_list' => array( // error message
+            'template' => 'error-list',
+        ),
+        'update_locked' => array( // error message
+            'variables' => array('id' => NULL),
+            'template' => 'update-locked',
+        ),
+    );
+}

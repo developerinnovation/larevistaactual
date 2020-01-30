@@ -1,0 +1,15 @@
+xml_journal_article_doaj:
+    path: '/xml/{nid}/content/article/doaj'
+    defaults:
+        _controller: '\Drupal\xml_journal_article\Controller\XmlJournalController::doaj'
+        _title: 'xml journal article Doaj'
+    requirements:
+        _access: 'TRUE'
+xml_journal_article_pubmed:
+    path: '/xml/{nid}/content/article/pubmed'
+    defaults:
+        _controller: '\Drupal\xml_journal_article\Controller\XmlJournalController::pubmed'
+        _title: 'xml journal article PubMed'
+    requirements:
+        _access: 'TRUE'
+    

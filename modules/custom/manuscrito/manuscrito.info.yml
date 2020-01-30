@@ -1,0 +1,6 @@
+name: 'Manuscrito'
+description: 'Permite crear manuscritos'
+core: 8.x
+type: module
+package: Custom
+configure: manuscrito.settings

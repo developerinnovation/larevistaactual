@@ -1,0 +1,5 @@
+services:
+  social_login_events_subscriber:
+    class: Drupal\social_login_events\EventSubscriber\SocialLoginSubscriber
+    tags:
+      - { name: 'event_subscriber' }
