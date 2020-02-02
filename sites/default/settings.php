@@ -769,9 +769,9 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
  include $app_root . '/' . $site_path . '/settings.local.php';
 }
 $databases['default']['default'] = array (
-    'database' => 'global_rheumatology',
-    'username' => 'root',
-    'password' => 'root',
+    'database' => '',
+    'username' => '',
+    'password' => '',
     'prefix' => '',
     'host' => 'localhost',
     'port' => '3306',
